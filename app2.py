@@ -72,7 +72,7 @@ if language == "English":
 def load_pipeline(target_language):
 
     return MangaTranslatorPipeline(
-        yolo_weights_path="model1/yolo11s.pt",
+        yolo_weights_path="yolo11s.pt",
         comic_font_path=font_path,
         target_language=target_language
     )
