@@ -1,0 +1,9 @@
+streamlit
+pandas
+pdf2image
+Pillow
+opencv-python-headless
+ultralytics
+manga-ocr
+deep-translator
+numpy
