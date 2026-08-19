@@ -29,7 +29,7 @@ class MangaTranslatorPipeline:
 
     def __init__(
         self,
-        yolo_weights_path="model1/yolo11s.pt",
+        yolo_weights_path="yolo11s.pt",
         comic_font_path=None,
         target_language="id"
     ):
