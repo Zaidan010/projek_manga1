@@ -52,7 +52,7 @@ conf = st.sidebar.slider(
 
 font_path = st.sidebar.text_input(
     "Font",
-    value="CANDARAI.ttf"
+    value="CANDARAI.TTF"
 )
 
 # ==========================================================
