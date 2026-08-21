@@ -252,24 +252,38 @@ class MangaTranslatorPipeline:
     # Utility
     ####################################################################
 
-    def load_font(
-        self,
-        size
-    ):
+    def load_font(self, size):
 
+        print("================================")
+        print("FONT PATH :", self.font_path)
+        print(
+            "FONT EXISTS :",
+            os.path.exists(self.font_path)
+            if self.font_path
+            else False
+        )
+        print("REQUESTED SIZE :", size)
+    
         try:
-
+    
             if self.font_path:
-
-                return ImageFont.truetype(
+    
+                font = ImageFont.truetype(
                     self.font_path,
                     size
                 )
-
-        except:
-
-            pass
-
+    
+                print("FONT LOADED SUCCESSFULLY")
+                print("ACTUAL FONT SIZE :", font.size)
+    
+                return font
+    
+        except Exception as e:
+    
+            print("FONT ERROR :", e)
+    
+        print("USING DEFAULT PIL FONT")
+    
         return ImageFont.load_default()
     
 
