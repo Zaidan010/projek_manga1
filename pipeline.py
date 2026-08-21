@@ -254,15 +254,13 @@ class MangaTranslatorPipeline:
 
     def load_font(self, size):
 
-        print("================================")
-        print("FONT PATH :", self.font_path)
-        print(
-            "FONT EXISTS :",
-            os.path.exists(self.font_path)
+        st.write("FONT PATH:", self.font_path)
+        st.write(
+            "FONT EXISTS:",
+            os.path.isfile(self.font_path)
             if self.font_path
             else False
         )
-        print("REQUESTED SIZE :", size)
     
         try:
     
@@ -273,19 +271,25 @@ class MangaTranslatorPipeline:
                     size
                 )
     
-                print("FONT LOADED SUCCESSFULLY")
-                print("ACTUAL FONT SIZE :", font.size)
+                st.write(
+                    "FONT LOADED:",
+                    font
+                )
     
                 return font
     
         except Exception as e:
     
-            print("FONT ERROR :", e)
+            st.error(
+                f"FONT ERROR: {e}"
+            )
     
-        print("USING DEFAULT PIL FONT")
+        st.warning(
+            "Menggunakan default PIL font"
+        )
     
         return ImageFont.load_default()
-    
+        
 
     def get_text_colors(self, image_pil, box):
         x1, y1, x2, y2 = box
