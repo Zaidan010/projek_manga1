@@ -271,7 +271,7 @@ def process_pdf(uploaded_file):
         shutil.rmtree(temp_dir)
         return
 
-    MAX_PAGE = 35
+    MAX_PAGE = 40
 
     if len(image_files) > MAX_PAGE:
         st.error(f"Maksimal {MAX_PAGE} halaman.")
