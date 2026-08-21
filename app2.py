@@ -430,7 +430,7 @@ def process_zip(uploaded_file):
 
     image_files = []
 
-    for ext in ["jpg", "jpeg", "png"]:
+    for ext in ["jpg", "jpeg", "png", "webp"]:
 
         image_files.extend(
 
